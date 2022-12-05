@@ -108,14 +108,12 @@ In order to create our project, the combination of following styles has been use
 
 ## Technical Specifications
 
-### Fault tolerance
-(!!! Add here)
+### Fault tolerance and Load Balancer
+The system uses the **Circuit Breaker** pattern to implement fault tolerance. The Circuit Breaker wraps a function and monitors for failures in order to track the load of the component. When the load is high the Circuit Breaker goes into an open state which activates a given time out on the component. After the timeout, the component enters into an half-open state, meaning that if the next request is successful the Circuit Breaker is closed and the component is fully available again. The chosen component for this pattern is the [ Booking validator ](https://git.chalmers.se/courses/dit355/dit356-2022/t-11/t11-booking-validator). The component also implements a minimum heap priority queue ordered by issuance which works as a load balancer, avoiding overloading the component while ensuring that non-unintentional duplicates are stored. The Circuit Breaker is triggered (opened) when the queue is at maximum capacity.  More information regarding the circuit breaker pattern is found [ here ](https://martinfowler.com/bliki/CircuitBreaker.html).
 
 ### Quality of service
-Every component of the system uses QOS level 1 since we want to guarantee that the message is delivered at least once.
-
-### Load Balancer
-(!!! Add here)
+The messages related to the booking use a QoS level 2 providing a warranty that the message is delivered only once. QoS 2 level has a higher overhead and takes more time to complete but it ensures that no double booking is made while reducing the load on the Booking validator component.  
+Messages that are not related to the booking storing process use a QoS level 1 assuring that the message is delivered at least once. 
 
 ## Project methodology
 (!!! Add here)
