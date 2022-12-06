@@ -14,20 +14,24 @@ Below links represent the project structure and will guide you to designated rep
 
 - [Web Application Repository](https://git.chalmers.se/courses/dit355/dit356-2022/t-11/t11-web-application)
 
-(Description)
+The Web Application is the user-interface where available time slots for appointments can be spotted and bookings can be made. 
+It consists of a vue frontend and an express backend.
 
 - [Database Model Handler Repository](https://git.chalmers.se/courses/dit355/dit356-2022/t-11/t11-database-model-handler)
 
-(Description)
+The Database Model Handler defines the schema for the clinics and bookings, which is used to persist clinic information and bookings in the MongoDB database.
 
 
 - [Booking Validator Repository](https://git.chalmers.se/courses/dit355/dit356-2022/t-11/t11-booking-validator)
 
-(Description)
+The Booking Validator queues booking requests from the web application and sends them to the DB Model Handler to persist the bookings in the database. 
+It also sends a confirmation email for every successful booking.
 
 - [Schedule Handler Repository](https://git.chalmers.se/courses/dit355/dit356-2022/t-11/t11-schedule-handler)
 
-(Description)
+The Schedule Handler stores clinic information and bookings from the MongoDB database to generate schedules for user-desired time intervals. 
+The generated schedule is passed on to the frontend.
+
 
 ## Software requirement specification (SRS)
 
@@ -118,7 +122,13 @@ The messages related to the booking use a QoS level 2 providing a warranty that 
 Messages that are not related to the booking storing process use a QoS level 1 assuring that the message is delivered at least once. 
 
 ## Project methodology
-(!!! Add here)
+
+We had an agile approach and adapted Scrum practices to our development process. Scrum roles were assigned to team members and remained fixed during development.
+We delivered the system incrementally in several iterations. Overall, we had four sprints where each sprint had a duration of two weeks. 
+At the beginning of each sprint, we did our sprint planning and used our Trello board for managing the tasks. 
+Weekly Scrum meetings were held twice a week to report progress of each team member and possible obstacles they might have faced. 
+At the end of each sprint, we had our Sprint Retrospective with the product owner.
+
 
 ## Software tools used
 
