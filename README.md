@@ -98,6 +98,8 @@ Below links represent the project structure and will guide you to designated rep
 
 * Deployment Diagram
 
+![Deployment Diagram](./assets/deployment_diagram.png)
+
 * Sequence Diagram
 
 ### Architectural styles
@@ -155,4 +157,3 @@ Messages that are not related to the booking storing process use a QoS level 1 a
 | Nicole Andrea Quinstedt               | Developer     |
 | Luiz Eduardo Philippi Rosane          | Product Owner |
 | Khaled Adel Saleh Mohammed Al-Baadani | Developer     |
-				
