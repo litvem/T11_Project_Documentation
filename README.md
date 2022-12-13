@@ -151,9 +151,38 @@ At the end of each sprint, we had our Sprint Retrospective with the product owne
 * [ Opossum ](https://nodeshift.dev/opossum/)
 * [ Nodemailer ](https://nodemailer.com/about/)
 * [ Mongoose ](https://mongoosejs.com/)
-* [ MongoDB ](https://www.mongodb.com/try/download/community?jmp=nav)
+* [ MongoDB Atlas ](https://www.mongodb.com/atlas/database)
 * [ Express.js ](https://expressjs.com/)
 * [ Min-priority queue library](https://www.npmjs.com/package/@datastructures-js/priority-queue)
+
+### MongoDB Atlas Setup
+Our project requires the user to set up a MongoDB Atlas account and store the [dentists](https://raw.githubusercontent.com/feldob/dit355_2020/master/dentists.json) 
+and bookings for the system to work in a local PC. Follow the steps below to create a free Atlas account and connect our system to the cloud database:
+
+1. Navigate to [MongoDB Atlas website](https://www.mongodb.com/cloud/atlas/register).
+2. Preferably sign up with an existing Google account or create an account manually by filling in your details.
+3. You will be forwarded to the "Create a Database" view. Otherwise, navigate to Database > Build a Database.
+4. Choose to create a free and shared MongoDB Atlas database.
+5. Choose the cloud provider aws and the region Stockholm (eu-north-1). Keep all other default settings (e.g., M0 Sandbox free tier, cluster name Cluster0) and click Create Cluster (takes a few minutes).
+6. Create a new Database user by entering Username and Password (avoid special characters for mongoose compatibility) and click "Create User" button.
+7. Choose "My Local Environment" to connect from.
+8. Enter ```0.0.0.0/0``` for the IP Address and click Add IP Address button.
+9. Navigate to Database and click the "Connect" button from the created database, then choose "connect your application" on the  pop-up.
+10. Copy and store the auto-generated connection string.
+
+#### Insert Dentist Information in the database
+1. Navigate to the Database and click the "Browse Collections" button, then click "Add My Own Data" button
+2. Set the database name to "tests" and the collection name to "dentists"
+3. Go to [dentists.json](https://raw.githubusercontent.com/feldob/dit355_2020/master/dentists.json) and copy the dentist data inside the list including the square brackets.
+4. Go back to the website and click on "INSERT Document" from the "dentists" collection, then paste the copied list and click "Insert" button.
+
+#### Connect Dentistimo system to MongoDB Atlas
+1. Open [Schedule Handler](https://git.chalmers.se/courses/dit355/dit356-2022/t-11/t11-schedule-handler) and [Database Model Handler](https://git.chalmers.se/courses/dit355/dit356-2022/t-11/t11-database-model-handler) in IDE, or clone the repositories if you don't have it locally.
+2. Add a ```".env"``` file in the root folder of the components containing the following key:
+```dotenv
+MONGO_ATLAS_URI="<Insert copied string from step 10>"
+```
+3. Replace the ```"<password>"``` placeholder with your personal password from step 6.
 
 ## Team Members
 
