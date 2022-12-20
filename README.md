@@ -108,7 +108,7 @@ The generated schedule is passed on to the Web Application component.
 
 * Sequence Diagram
 
-![Sequence Diagram](./assets/Sequence%20Diagram.png)
+![Sequence Diagram](./assets/Sequence_Diagram.png)
 
 ### Architectural styles
 In order to create our project, the combination of following styles has been used:
@@ -137,8 +137,9 @@ More information regarding the **circuit breaker** pattern can be
 found [here](https://martinfowler.com/bliki/CircuitBreaker.html).
 
 ### Quality of Service (QoS)
-The messages related to the booking use a QoS level 2 providing a warranty that the message is delivered only once. QoS 2 level has a higher overhead and takes more time to complete but it ensures that no double booking is made while reducing the load on the Booking Validator component.  
-Messages that are not related to the booking storing process use a QoS level 1 assuring that the message is delivered at least once. 
+The system uses a combination of QoS 1 and QoS 2 to optimize its reliability and performance. <br>
+The messages related to the booking storing process use a QoS 2 providing a warranty that the message is delivered only once. QoS 2 level has a higher overhead and takes more time to complete, but it ensures that the same request is not processed twice. Furthermore, it decreases load on the Booking Validator and increases the reliability of the data stored in th Database Model Handler.  
+Messages not related to the booking storing process use a QoS level 1 assuring that the message is delivered at least once. 
 
 ## Project Methodology
 
