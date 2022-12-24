@@ -70,12 +70,12 @@ The generated schedule is passed on to the Web Application component.
 ```
 {
   "userid": "example@gmail.com",
-  "dentistid": 2,
+  "dentistId": 2,
   "issuance": 1602406766314,
   "date": "2020-12-14",
   "time": "13:00-13:30",
   "name": "John",
-  "sessionid": "5355QPITzxL9-tGW1yOUMITYwIYk4Vdz"
+  "sessionId": "5355QPITzxL9-tGW1yOUMITYwIYk4Vdz"
 }
 ```
 2. The system response in case of a successful booking shall follow the following format:
@@ -86,7 +86,7 @@ The generated schedule is passed on to the Web Application component.
   "date": "2020-12-14",
   "time": "9:30-10:00",
   "name": "John",
-  "sessionid": "5355QPITzxL9-tGW1yOUMITYwIYk4Vdz"
+  "sessionId": "5355QPITzxL9-tGW1yOUMITYwIYk4Vdz"
 }
 ```
 
@@ -158,13 +158,14 @@ At the end of each sprint, we conducted our Sprint Retrospective with the produc
 * Communication tools: [Discord](https://discord.com/), [Slack](https://slack.com/)
 
 ### Product Development Tools
+* [Node.js](https://nodejs.org/en/)
 * [NPM](https://www.npmjs.com/)
 * [Vue.js](https://vuejs.org/)
 * [Vite](https://vitejs.dev/)
 * [Bootstrap](https://getbootstrap.com/)
 * [BootstrapVue](https://bootstrap-vue.org/)
-* [VueGeolocation API](https://developers.google.com/maps/documentation/javascript/cloud-setup)
-* [VueGoogleMaps](https://developers.google.com/maps/documentation/javascript/cloud-setup)
+* [GmapVue](https://diegoazh.github.io/gmap-vue/#v2-0-0)
+* [VueGeoLocation](https://console.cloud.google.com/welcome?project=clinics-368621&authuser=0&organizationId=1043303994003)
 * [Express.js](https://expressjs.com/)
 * [Axios](https://axios-http.com/)
 * [Eclipse Mosquitto](https://mosquitto.org/)
