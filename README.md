@@ -1,8 +1,8 @@
-# Team-11 Dentistimo Documentation
+# T11 - Dentistimo Documentation
 
 ## Purpose
 It is important to go to the dentist for annual checkups and take good care of your teeth.
-However, it's not always easy for newcomers in Sweden to get a dentist appointment as most clinics are already full and will reject you 
+However, it is not always easy for newcomers in Sweden to get a dentist appointment as most clinics are already full and will reject you 
 as a new care-taker. Consequently, they have to manually search online for available time-slots or get a hold of a clinic through 
 tiring phone calls, with low success rates.
  
@@ -60,10 +60,10 @@ The generated schedule is passed on to the Web Application component.
 
 #### b) Domain Constraints
 1. Each appointment is 30 minutes long.
-2. Appointment can start every half or full hour.
+2. Appointments can start every half or full hour.
 3. Each dentist has a one hour lunch break.
-4. Each dentist has a 30 minutes fika break.
-5. Each clinic has a name, an owner, an address and coordinates, a city (Gothenburg), opening hours and number of dentist.
+4. Each dentist has a 30 minute fika break.
+5. Each clinic has a name, an owner, an address and coordinates, a city (Gothenburg), opening hours and number of dentists.
 
 #### c) Request Format Constraints
 1. Booking request shall follow the following format:
@@ -114,7 +114,7 @@ The generated schedule is passed on to the Web Application component.
 In order to create our project, the combination of following styles has been used:
 * **Client/Server:** used to create separation between backend and frontend.
 * **Publish/Subscribe:** used in order for the components to communicate with each other by publishing and/or subscribing to different topics through a broker, in our case Eclipse Mosquitto.
-* **Pipe-and-Filter:** used in order to filter data that has be send from one component to another according to certain filter criteria.
+* **Pipe-and-Filter:** used to filter data that has be send from one component to another according to certain filter criteria.
 
 ## Technical Specifications
 
@@ -144,10 +144,10 @@ Messages not related to the booking storing process use a QoS level 1 assuring t
 ## Project Methodology
 
 We had an Agile approach and adapted Scrum practices to our development process. Scrum roles were assigned to team members and remained fixed during development.
-We delivered the system incrementally in several iterations. Overall, we had four sprints where each sprint had a duration of two weeks. 
-At the beginning of each sprint, we did our sprint planning and used our Trello board for managing the tasks. 
+We delivered the system incrementally in several iterations. Overall, we had four Sprints where each Sprint had a duration of two weeks. 
+At the beginning of each Sprint, we did our Sprint Planning and used our Trello board for managing the tasks. 
 Weekly Scrum meetings were held twice a week to report progress of each team member and possible obstacles they might have faced. 
-At the end of each sprint, we conducted our Sprint Retrospective with the product owner.
+At the end of each Sprint, we conducted our Sprint Review with the product owner.
 
 ## Software tools used
 
@@ -204,15 +204,43 @@ MONGO_ATLAS_URI="<Insert copied string from step 10>"
 ```
 3. Replace the ```"<password>"``` placeholder with your personal password from step 6.
 
+## Full Project Setup Instructions
+
+**<ins>Step 1.</ins> Check if your browser supports websockets**
+
+> ❗ If you are using <ins>Mosquitto</ins>, be aware that it does <ins>not</ins> support websockets by default 
+
+To use websocket with the mosquitto.conf file, add the following:
+
+```
+listener 1883
+protocol mqtt
+listener 9001
+protocol websockets
+allow_anonymous true
+```
+
+**<ins>Step 2.</ins> Setup Database Model Handler component**<br>
+Instructions on how to set up the Database Model Handler component can be found [here](https://git.chalmers.se/courses/dit355/dit356-2022/t-11/t11-database-model-handler/-/blob/main/README.md#setup).
+
+**<ins>Step 3.</ins> Setup Schedule Handler component**<br>
+Instructions on how to set up the Schedule Handler component can be found [here](https://git.chalmers.se/courses/dit355/dit356-2022/t-11/t11-schedule-handler/-/blob/main/README.md#setup).
+
+**<ins>Step 4.</ins> Setup Booking Validator component**<br>
+Instructions on how to set up the Booking Validator component can be found [here](https://git.chalmers.se/courses/dit355/dit356-2022/t-11/t11-booking-validator/-/blob/main/README.md#instructions).
+
+**<ins>Step 5.</ins> Setup Web Application component**<br>
+Instructions on how to set up the Web Application component can be found [here](https://git.chalmers.se/courses/dit355/dit356-2022/t-11/t11-web-application/-/blob/main/README.md#setup).
+
 ## Team Members
 
-| Names                                 | Roles         |
-|---------------------------------------|---------------|
-| Saif Sayed                            | Developer     |
-| Robert Einer                          | Developer     |
-| Emma Litvin                           | Scrum Master  |
-| Danila Baryshev                       | Developer     |
-| Bao Quan Lindgren                     | Developer     |
-| Nicole Andrea Quinstedt               | Developer     |
-| Luiz Eduardo Philippi Rosane          | Product Owner |
-| Khaled Adel Saleh Mohammed Al-Baadani | Developer     |
+| Names                                 | Roles                    |
+|---------------------------------------|--------------------------|
+| Saif Sayed                            | Developer                |
+| Robert Einer                          | Developer                |
+| Emma Litvin                           | Scrum Master, Developer  |
+| Danila Baryshev                       | Developer                |
+| Bao Quan Lindgren                     | Developer                |
+| Nicole Andrea Quinstedt               | Developer                |
+| Luiz Eduardo Philippi Rosane          | Product Owner, Developer |
+| Khaled Adel Saleh Mohammed Al-Baadani | Developer                |
