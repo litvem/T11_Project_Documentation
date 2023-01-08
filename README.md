@@ -116,6 +116,26 @@ In order to create our project, the combination of following styles has been use
 * **Publish/Subscribe:** used in order for the components to communicate with each other by publishing and/or subscribing to different topics through a broker, in our case Eclipse Mosquitto.
 * **Pipe-and-Filter:** used to filter data that has be send from one component to another according to certain filter criteria.
 
+## MQTT Topics
+
+| **MQTT Topic** | **Publisher** | **Subscriber** |
+|----------------|---------------|----------------|
+| data/dentist/request | Web Application | Database Model Handler |
+| data/dentist/response | Database Model Handler | Web Application |
+| schedule/initial/request | Web Application | Schedule Handler |
+| schedule/initial/response | Schedule Handler | Web Application |
+| schedule/request | Web Application | Schedule Handler |
+| schedule/response/\<interval> | Schedule Handler | Web Application |
+| booking/request | Web Application | Booking Validator |
+| booking/save | Booking Validator | Database Model Handler |
+| booking/confirmed/\<sessionId> | Database Model Handler | Booking Validator, Web Application |
+| booking/error/\<sessionId> | Database Model Handler | Booking Validator, Web Application |
+| schedule/remove/client | Web Application | Schedule Handler |
+| emailconfirmation/\<sessionId> | Booking Validator | Web Application |
+| emailconfirmation/error/\<sessionId> | Booking Validator | Web Application |
+| circuitbreak/open | Booking Validator | Web Application |
+| circuitbreak/close | Booking Validator | Web Application |
+
 ## Technical Specifications
 
 ### Fault Tolerance and Load Balancer
