@@ -240,16 +240,16 @@ allow_anonymous true
 ```
 
 **<ins>Step 2.</ins> Setup Database Model Handler component**<br>
-Instructions on how to set up the Database Model Handler component can be found [here](https://github.com/litvem/T11_Database_Model_Handler/-/blob/main/README.md#setup).
+Instructions on how to set up the Database Model Handler component can be found [here](https://github.com/litvem/T11_Database_Model_Handler/blob/main/README.md#setup).
 
 **<ins>Step 3.</ins> Setup Schedule Handler component**<br>
-Instructions on how to set up the Schedule Handler component can be found [here](https://github.com/litvem/T11_Schedule_Handler/-/blob/main/README.md#setup).
+Instructions on how to set up the Schedule Handler component can be found [here](https://github.com/litvem/T11_Schedule_Handler/blob/main/README.md#setup).
 
 **<ins>Step 4.</ins> Setup Booking Validator component**<br>
-Instructions on how to set up the Booking Validator component can be found [here](https://github.com/litvem/T11_Booking_Validator/-/blob/main/README.md#instructions).
+Instructions on how to set up the Booking Validator component can be found [here](https://github.com/litvem/T11_Booking_Validator/blob/main/README.md#instructions).
 
 **<ins>Step 5.</ins> Setup Web Application component**<br>
-Instructions on how to set up the Web Application component can be found [here](https://github.com/litvem/T11_Web_Application/-/blob/main/README.md#setup).
+Instructions on how to set up the Web Application component can be found [here](https://github.com/litvem/T11_Web_Application/blob/main/README.md#setup).
 
 ## Team Members
 
