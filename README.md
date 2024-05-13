@@ -12,22 +12,21 @@ Dentistimo is a web application that provides a dental appointment booking servi
 
 Below links represent the project structure and will guide you to designated repositories. In each repository, a detailed description of respected component responsibilities are provided.
 
-- [Web Application repository](https://git.chalmers.se/courses/dit355/dit356-2022/t-11/t11-web-application)
+- [Web Application repository](https://github.com/litvem/T11_Web_Application)
 
 The **Web Application** is the user interface where available time slots for appointments can be spotted and bookings can be made. 
 It consists of a Vue frontend and an Express backend.
 
-- [Database Model Handler repository](https://git.chalmers.se/courses/dit355/dit356-2022/t-11/t11-database-model-handler)
+- [Database Model Handler repository](https://github.com/litvem/T11_Database_Model_Handler)
 
 The **Database Model Handler** defines the schema for the clinics and bookings, which is used to persist clinic information and bookings in the MongoDB database.
 
-
-- [Booking Validator repository](https://git.chalmers.se/courses/dit355/dit356-2022/t-11/t11-booking-validator)
+- [Booking Validator repository](https://github.com/litvem/T11_Booking_Validator)
 
 The **Booking Validator** queues booking requests from the Web Application and sends them to the Database Model Handler to persist the bookings in the database. 
 It also sends a confirmation email for every successful booking.
 
-- [Schedule Handler repository](https://git.chalmers.se/courses/dit355/dit356-2022/t-11/t11-schedule-handler)
+- [Schedule Handler repository](https://github.com/litvem/T11_Schedule_Handler)
 
 The **Schedule Handler** stores clinic information and bookings from the MongoDB database to generate schedules for user-desired time intervals. 
 The generated schedule is passed on to the Web Application component.
@@ -141,7 +140,7 @@ In order to create our project, the combination of following styles has been use
 ### Fault Tolerance and Load Balancer
 The system uses the **Circuit Breaker** pattern to implement **fault
 tolerance** and the chosen component for this pattern is 
-the [Booking Validator](https://git.chalmers.se/courses/dit355/dit356-2022/t-11/t11-booking-validator).
+the [Booking Validator](https://github.com/litvem/T11_Booking_Validator).
 This component also implements a minimum heap priority queue ordered by issuance which works as a **load balancer**,
 avoiding overloading the component while ensuring that non-unintentional duplicates are stored by having a synchronous 
 communication with the Database Model Handler. 
@@ -217,7 +216,7 @@ Our project requires the user to set up a MongoDB Atlas account and store the [d
 4. Go back to the website and click on "**Insert Document**" from the "dentists" collection, then paste the copied list and click "**Insert**" button.
 
 ### Connect Dentistimo system to MongoDB Atlas
-1. Open [Schedule Handler](https://git.chalmers.se/courses/dit355/dit356-2022/t-11/t11-schedule-handler) and [Database Model Handler](https://git.chalmers.se/courses/dit355/dit356-2022/t-11/t11-database-model-handler) in IDE, or clone the repositories if you don't have it locally.
+1. Open [Schedule Handler](https://github.com/litvem/T11_Schedule_Handler) and [Database Model Handler](https://github.com/litvem/T11_Database_Model_Handler) in IDE, or clone the repositories if you don't have it locally.
 2. Add a ```".env"``` file in the root folder of the components containing the following key:
 ```dotenv
 MONGO_ATLAS_URI="<Insert copied string from step 10>"
@@ -241,16 +240,16 @@ allow_anonymous true
 ```
 
 **<ins>Step 2.</ins> Setup Database Model Handler component**<br>
-Instructions on how to set up the Database Model Handler component can be found [here](https://git.chalmers.se/courses/dit355/dit356-2022/t-11/t11-database-model-handler/-/blob/main/README.md#setup).
+Instructions on how to set up the Database Model Handler component can be found [here](https://github.com/litvem/T11_Database_Model_Handler/-/blob/main/README.md#setup).
 
 **<ins>Step 3.</ins> Setup Schedule Handler component**<br>
-Instructions on how to set up the Schedule Handler component can be found [here](https://git.chalmers.se/courses/dit355/dit356-2022/t-11/t11-schedule-handler/-/blob/main/README.md#setup).
+Instructions on how to set up the Schedule Handler component can be found [here](https://github.com/litvem/T11_Schedule_Handler/-/blob/main/README.md#setup).
 
 **<ins>Step 4.</ins> Setup Booking Validator component**<br>
-Instructions on how to set up the Booking Validator component can be found [here](https://git.chalmers.se/courses/dit355/dit356-2022/t-11/t11-booking-validator/-/blob/main/README.md#instructions).
+Instructions on how to set up the Booking Validator component can be found [here](https://github.com/litvem/T11_Booking_Validator/-/blob/main/README.md#instructions).
 
 **<ins>Step 5.</ins> Setup Web Application component**<br>
-Instructions on how to set up the Web Application component can be found [here](https://git.chalmers.se/courses/dit355/dit356-2022/t-11/t11-web-application/-/blob/main/README.md#setup).
+Instructions on how to set up the Web Application component can be found [here](https://github.com/litvem/T11_Web_Application/-/blob/main/README.md#setup).
 
 ## Team Members
 
